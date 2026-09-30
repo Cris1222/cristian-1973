@@ -112,7 +112,7 @@ export const RegisterPage: React.FC = () => {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
-            placeholder="Cristian Corona"
+            placeholder="Usuario Nombre"
           />
         </div>
 

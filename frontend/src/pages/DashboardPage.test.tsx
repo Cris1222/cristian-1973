@@ -11,7 +11,7 @@ describe('Dashboard - SnailPay', () => {
       'user',
       JSON.stringify({
         id: 'user_1',
-        fullName: 'Cristian Corona',
+        fullName: 'Usuario Prueba',
         email: 'correo@ejemplo.com',
         password: 'hash',
         balance: 0,
