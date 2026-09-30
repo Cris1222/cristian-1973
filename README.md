@@ -1,8 +1,10 @@
 # Carreras Caracoles
 
-Aplicación web simula una plataforma de carreras de caracoles y recargas de saldo mediante un servicio de pagos ficticio llamado **SnailPay**.
+Aplicación web que simula una plataforma de carreras de caracoles y recargas de saldo mediante un servicio de pagos ficticio llamado **SnailPay**.
 
 El proyecto utiliza React y TypeScript para el frontend y Express con TypeScript para la API de SnailPay.
+
+---
 
 ## Tecnologías
 
@@ -10,10 +12,12 @@ El proyecto utiliza React y TypeScript para el frontend y Express con TypeScript
 
 - React
 - TypeScript
+- Vite
 - React Router
 - Recharts
 - CSS
 - LocalStorage
+- Web Crypto API
 
 ### Backend
 
@@ -21,6 +25,16 @@ El proyecto utiliza React y TypeScript para el frontend y Express con TypeScript
 - Express
 - TypeScript
 - CORS
+
+### Pruebas
+
+- Vitest
+- Supertest
+- React Testing Library
+- User Event
+- JSDOM
+
+---
 
 ## Funcionalidades
 
@@ -188,9 +202,7 @@ snailpay_payment_data
 
 ## Consideraciones de seguridad
 
-Este proyecto es una simulación realizada exclusivamente para una prueba técnica.
-
-Por requerimiento de la prueba, el número de tarjeta y CVV ficticios son incluidos en las respuestas de SnailPay y almacenados en LocalStorage.
+Este proyecto es una simulación. El número de tarjeta y CVV ficticios son incluidos en las respuestas de SnailPay y almacenados en LocalStorage.
 
 **Esto no debe realizarse en una aplicación real.**
 
@@ -210,7 +222,7 @@ SHA-256 por sí solo no es una estrategia adecuada para almacenar contraseñas e
 Clonar el repositorio:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/Cris1222/cristian-1973.git
 ```
 
 ### Backend
