@@ -355,3 +355,27 @@ body {
   font-size: 14px;
   font-weight: 600;
 }
+
+.simulate-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 20px;
+  padding: 12px;
+
+  background: #f3f4f6;
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.simulate-error input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.simulate-error label {
+  cursor: pointer;
+}

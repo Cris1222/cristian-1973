@@ -30,6 +30,8 @@ export const RechargeModal = ({ user, onClose, onSuccess }: Props) => {
     amount: '',
   });
 
+  const [simulateSystemError, setSimulateSystemError] = useState(false);
+
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
@@ -65,6 +67,9 @@ export const RechargeModal = ({ user, onClose, onSuccess }: Props) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            ...(simulateSystemError && {
+              'X-Simulate-Error': 'true',
+            }),
           },
 
           body: JSON.stringify({
@@ -203,15 +208,30 @@ export const RechargeModal = ({ user, onClose, onSuccess }: Props) => {
             />
           </div>
 
+          <div className="simulate-error">
+            <input
+              type="checkbox"
+              id="simulateSystemError"
+              checked={simulateSystemError}
+              onChange={(e) =>
+                setSimulateSystemError(e.target.checked)
+              }
+            />
+
+            <label htmlFor="simulateSystemError">
+              Simular error del sistema
+            </label>
+          </div>
+
           {success ? (
             <button type="button" className="pay-button" onClick={onClose}>
                 Cerrar
             </button>
-            ) : (
+          ) : (
             <button type="submit" className="pay-button" disabled={loading}>
                 {loading ? 'Procesando...' : 'Cargar saldo'}
             </button>
-            )}
+          )}
         </form>
       </div>
     </div>
