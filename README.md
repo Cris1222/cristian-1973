@@ -295,6 +295,122 @@ http://localhost:5173
 12. Intentar acceder directamente a `/dashboard`.
 13. Comprobar que la aplicación redirija a `/login`.
 
+
+# 🧪 Pruebas del backend
+
+Se utilizan:
+
+- Vitest
+- Supertest
+
+Supertest permite probar la aplicación Express directamente sin tener que iniciar manualmente el servidor.
+
+Las pruebas se encuentran en:
+
+```text
+backend/tests/snailPay.test.ts
+```
+
+Los escenarios cubiertos incluyen:
+
+```text
+✓ Transacción válida aprobada
+
+✓ Tarjeta incorrecta rechazada
+
+✓ Monto igual a cero rechazado
+
+✓ Monto negativo rechazado
+
+✓ Número de tarjeta inválido
+
+✓ CVV inválido
+
+✓ Formato de vencimiento inválido
+
+✓ Email inválido
+
+✓ Campos obligatorios vacíos
+
+✓ Error interno de SnailPay
+
+✓ Estructura completa de la respuesta
+```
+
+Para ejecutar las pruebas:
+
+```bash
+cd backend
+npm test
+```
+
+Para ejecutarlas en modo watch:
+
+```bash
+npm run test:watch
+```
+
+# 🧪 Pruebas del frontend
+
+El frontend utiliza:
+
+- Vitest
+- React Testing Library
+- User Event
+- JSDOM
+
+Las pruebas simulan la interacción real del usuario con la interfaz.
+
+Se utiliza un `mock` de `fetch` para controlar las respuestas simuladas de SnailPay sin depender del backend real.
+
+Por ejemplo:
+
+```text
+Usuario tiene $0
+        ↓
+Abre Cargar saldo
+        ↓
+Introduce los datos
+        ↓
+SnailPay responde approved
+        ↓
+Saldo cambia a $500
+        ↓
+LocalStorage contiene balance = 500
+```
+
+Los escenarios principales que se buscan verificar son:
+
+```text
+APPROVED
+    ↓
+Saldo aumenta
+LocalStorage se actualiza
+
+REJECTED
+    ↓
+Saldo NO aumenta
+
+ERROR
+    ↓
+Saldo NO aumenta
+```
+
+Para ejecutar las pruebas del frontend:
+
+```bash
+cd frontend
+npm test
+```
+
+Modo watch:
+
+```bash
+npm run test:watch
+```
+
+---
+
 ## Autor
 
 Cristian Corona
